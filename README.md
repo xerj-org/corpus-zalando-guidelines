@@ -14,3 +14,13 @@ Pinned upstream commit: 19a1905ad50ad71968c473009b157fd9245f5c66
 Licence: CC-BY-4.0 (LICENSE, upstream) — unchanged by this scoping.
 Regeneration: clone upstream, copy chapters/ minus the two exclusions,
 copy LICENSE and index.adoc.
+
+## 2026-10-05 — chapters flattened to .txt (granularity fix, round 2)
+
+Second G7 run on the per-chapter mirror scored 1/5: autoindex sections .adoc
+by asciidoc structure (220 section records from 25 files) and compatibility's
+many sections crowded every top-5. Chapters are renamed .txt with content
+byte-identical (git mv only) so each indexes as ONE whole-file record — the
+same whole-file convention the whatwg sections mirror relies on. Largest
+chapter is 41 KB, far under any chunk/skip threshold.
+Regeneration unchanged, plus `for f in chapters/*.adoc; do git mv ...txt`.
